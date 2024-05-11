@@ -1,4 +1,5 @@
-import Navbar from "../components/Navbar";
+import Header from "../components/Header";
+import Move from "../components/move";
 
 export default function MainLayout({
   children,
@@ -6,15 +7,16 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      <header>
-        <Navbar />
-      </header>
-
-      {children}
-      <footer>
-        <div> footer </div>
-      </footer>
-    </section>
+    <>
+      <div className="w-[414px] h-[736px] absolute left-0 top-0 overflow-hidden">
+        <header>
+          <Header />
+        </header>
+        <body>{children}</body>
+        <section>
+          <Move />
+        </section>
+      </div>
+    </>
   );
 }
