@@ -9,13 +9,25 @@ import DayPicker from "./_components/DayPicker";
 //   ssr: false,
 // });
 
+// import { useState, useEffect } from "react";
+
 export default function page() {
+  // const [isClient, setIsClient] = useState(false);
+
+  // useEffect(() => {
+  //   setIsClient(true);
+  // }, []);
+
   return (
-    <div className="w-[414px] h-[736px] relative overflow-hidden bg-[#d6d7ef]">
-      <div className="w-[356.68px] h-[100px]">{/* <DayPicker /> */}</div>
+    <>
+      {/* <h1>{isClient ? "This is never prerendered" : "Prerendered"}</h1> */}
+
+      <div className="w-[356.68px] h-[100px]">
+        <DayPicker />
+      </div>
       <div className="w-[400px] h-[500px]">
         <Chart />
       </div>
-    </div>
+    </>
   );
 }

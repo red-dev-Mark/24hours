@@ -51,10 +51,7 @@ export default function DayPicker() {
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent position="popper">
-              <SelectItem value="0">Today</SelectItem>
-              <SelectItem value="1">Tomorrow</SelectItem>
-              <SelectItem value="3">In 3 days</SelectItem>
-              <SelectItem value="7">In a week</SelectItem>
+              <SelectItem value="0">오늘</SelectItem>
             </SelectContent>
           </Select>
           <div className="rounded-md border">
