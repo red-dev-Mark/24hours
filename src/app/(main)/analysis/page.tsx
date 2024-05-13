@@ -22,10 +22,10 @@ export default function page() {
     <>
       {/* <h1>{isClient ? "This is never prerendered" : "Prerendered"}</h1> */}
 
-      <div className="w-[356.68px] h-[100px]">
+      <div className="w-[356.68px] h-[100px] mt-20 mx-auto">
         <DayPicker />
       </div>
-      <div className="w-[400px] h-[500px]">
+      <div className="w-[400px] h-[400px]">
         <Chart />
       </div>
     </>
