@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import Move from "../components/move";
+import Move from "../components/Move";
 
 export default function MainLayout({
   children,
@@ -8,14 +8,13 @@ export default function MainLayout({
 }) {
   return (
     <>
-      <div className="w-[414px] h-[736px] absolute left-0 top-0 overflow-hidden">
-        <header>
-          <Header />
-        </header>
-        <body>{children}</body>
-        <section>
+      <div className="w-[414px] h-[736px] relative overflow-hidden bg-white">
+        <div className="w-[414px] h-[896px] absolute left-[-1px] top-[-1px] bg-[#d6d7ef]" />
+        <Header />
+        <div className="w-[414px] h-[736px] absolute overflow-hidden">
+          <div className="w-[391px] h-[349.84px]">{children}</div>
           <Move />
-        </section>
+        </div>
       </div>
     </>
   );
