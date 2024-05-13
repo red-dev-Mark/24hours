@@ -1,43 +1,10 @@
 "use client";
 
 import { ResponsivePie } from "@nivo/pie";
-// import { dummy } from "@/lib/dummyData";
+import { dummy } from "@/lib/dummyData";
 
 export default function Chart() {
-  // const data = { dummy };
-  // console.log(dummy);
-  const data = [
-    {
-      id: "운동",
-      label: "운동",
-      value: 415,
-      color: "hsl(90, 70%, 50%)",
-    },
-    {
-      id: "공부",
-      label: "공부",
-      value: 95,
-      color: "hsl(349, 70%, 50%)",
-    },
-    {
-      id: "독서",
-      label: "독서",
-      value: 250,
-      color: "hsl(146, 70%, 50%)",
-    },
-    {
-      id: "수면",
-      label: "수면",
-      value: 545,
-      color: "hsl(287, 70%, 50%)",
-    },
-    {
-      id: "css",
-      label: "css",
-      value: 420,
-      color: "hsl(81, 70%, 50%)",
-    },
-  ];
+  const data = { dummy }.dummy;
 
   return (
     <>
