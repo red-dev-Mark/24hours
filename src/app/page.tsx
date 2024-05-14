@@ -6,7 +6,6 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <Link href="home"> Click!</Link>
       <div className="w-[414px] h-[736px] relative overflow-hidden bg-[#9395d3]">
         <Image
           src="https://lh3.googleusercontent.com/a/ACg8ocJmYoFLSBBSN8EUcfuQQUGZ0kdegIkqWN-YCh24MF4y4xONkO4C=s576-c-no"
@@ -34,11 +33,14 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-col justify-start items-start absolute left-10 top-[528px] gap-2.5">
-          <Button
-            text="LOG IN"
-            backgroundColor="linear-gradient(126.46deg, #28888c 15.02%, #042a50 146.17%)"
-            textColor="white"
-          />
+          <Link href="home">
+            <Button
+              text="LOG IN"
+              backgroundColor="linear-gradient(126.46deg, #28888c 15.02%, #042a50 146.17%)"
+              textColor="white"
+            />
+          </Link>
+
           <Button text="SIGN UP" backgroundColor="white" textColor="#28888c" />
         </div>
         <Icon
