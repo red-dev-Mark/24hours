@@ -7,7 +7,7 @@ export const dummy = [
   },
   {
     id: "javascript",
-    label: "javascript",
+    label: "자바스크립트",
     value: 13,
     color: "hsl(349, 70%, 50%)",
   },

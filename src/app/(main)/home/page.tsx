@@ -1,13 +1,8 @@
-import ControlButton from "../home/_components/ControlButton"
-import CategoryButton from "../home/_components/CategoryButton"
+import ControlButton from "../home/_components/ControlButton";
+import CategoryButton from "../home/_components/CategoryButton";
 
 const Page: React.FC = () => {
-  const categories: string[] = [
-    "운동",
-    "공부",
-    "휴식",
-    "식사",
-  ];
+  const categories: string[] = ["운동", "공부", "휴식", "식사"];
   return (
     <div className="">
       <div className="flex justify-center">
