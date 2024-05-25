@@ -1,9 +1,9 @@
-interface ControlButtonProps {
-  text: string;
+export default function ControlButton(className: string, text, onClick) {
+  return (
+    <div>
+      <button className={className} onClick={onClick}>
+        {text}
+      </button>
+    </div>
+  );
 }
-
-const ControlButton: React.FC<ControlButtonProps> = ({ text }) => {
-  return <button className="px-10 py-4 bg-blue-300 rounded-xl">{text}</button>;
-};
-
-export default ControlButton;

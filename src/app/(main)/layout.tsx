@@ -1,6 +1,5 @@
 import Header from "../components/Header";
 import Move from "../components/Move";
-import Link from "next/link";
 
 export default function MainLayout({
   children,
@@ -8,19 +7,14 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <div className="w-[414px] h-[736px] relative overflow-hidden bg-white">
-        <div className="w-[414px] h-[896px] absolute left-[-1px] top-[-1px] bg-[#d6d7ef]" />
-        <Link href="home">
-          <Header />
-        </Link>
-        <div className="w-[414px] h-[736px] absolute overflow-hidden">
-          <div className="w-[391px] h-[349.84px] flex-none">{children}</div>
-          <Link href="analysis">
-            <Move />
-          </Link>
+    <div className="flex justify-center items-center h-screen m-0 bg-gray-200">
+      <div className="w-[414px] h-[736px] flex flex-col justify-center items-center mx-auto bg-white border-2 border-gray-300 rounded-2xl shadow-lg relative overflow-hidden">
+        <Header />
+        <div className="flex justify-center items-center h-full">
+          <div className="w-full h-full p-10">{children}</div>
         </div>
+        <Move />
       </div>
-    </>
+    </div>
   );
 }
