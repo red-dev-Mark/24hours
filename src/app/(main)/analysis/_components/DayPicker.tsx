@@ -35,7 +35,11 @@ export default function DayPicker() {
             )}
           >
             {/* <CalendarIcon className="mr-2 h-4 w-4" /> */}
-            {date ? format(date, "PPP") : <span>Pick a date</span>}
+            {date ? (
+              format(date, "yyyy년 MM월 dd일")
+            ) : (
+              <span>날짜를 고르세요</span>
+            )}
           </Button>
         </PopoverTrigger>
         <PopoverContent
