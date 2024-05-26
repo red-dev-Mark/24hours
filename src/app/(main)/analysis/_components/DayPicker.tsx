@@ -1,8 +1,8 @@
 "use client";
 
 import * as React from "react";
-// import { CalendarIcon } from "@radix-ui/react-icons";
-import { addDays, format } from "date-fns";
+import { CalendarIcon } from "@radix-ui/react-icons";
+import { subDays, format } from "date-fns";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -19,10 +19,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useDayStore } from "@/lib/useStoreProvider";
+import { SelectSingleEventHandler } from "react-day-picker";
 
 export default function DayPicker() {
-  const [date, setDate] = React.useState<Date>();
-
+  const { day, count, setDay, setCount } = useDayStore((state) => state);
+  console.log(day, count);
   return (
     <>
       <Popover>
@@ -31,12 +33,12 @@ export default function DayPicker() {
             variant={"outline"}
             className={cn(
               "w-[240px] justify-start text-left font-normal",
-              !date && "text-muted-foreground"
+              !day && "text-muted-foreground"
             )}
           >
-            {/* <CalendarIcon className="mr-2 h-4 w-4" /> */}
-            {date ? (
-              format(date, "yyyy년 MM월 dd일")
+            <CalendarIcon className="mr-2 h-4 w-4" />
+            {day ? (
+              format(day, "yyyy년 MM월 dd일")
             ) : (
               <span>날짜를 고르세요</span>
             )}
@@ -44,23 +46,28 @@ export default function DayPicker() {
         </PopoverTrigger>
         <PopoverContent
           align="start"
-          className="flex w-auto flex-col space-y-2 p-2"
+          className="flex w-[240px] flex-col space-y-2 p-2"
         >
           <Select
-            onValueChange={(value) =>
-              setDate(addDays(new Date(), parseInt(value)))
-            }
+            onValueChange={(count) => (
+              setDay(subDays(new Date(), parseInt(count))), setCount(count)
+            )}
           >
             <SelectTrigger>
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent position="popper">
               <SelectItem value="0">오늘</SelectItem>
+              <SelectItem value="1">어제</SelectItem>
             </SelectContent>
           </Select>
-          <div className="rounded-md border">
-            <Calendar mode="single" selected={date} onSelect={setDate} />
-          </div>
+          {/* <div className="rounded-md border">
+            <Calendar
+              mode="single"
+              selected={day}
+              onSelect={setDay as SelectSingleEventHandler}
+            />
+          </div> */}
         </PopoverContent>
       </Popover>
     </>

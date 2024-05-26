@@ -2,9 +2,11 @@
 
 import { ResponsivePie } from "@nivo/pie";
 import { dummy } from "@/lib/dummyData";
+import { useDayStore } from "@/lib/useStoreProvider";
 
 export default function Chart() {
-  const data = { dummy }.dummy;
+  const { count } = useDayStore((state) => state);
+  const data = { dummy }.dummy[Number(count) as 0 | 1];
 
   return (
     <>
