@@ -51,6 +51,39 @@ export default function Chart() {
             spacing: 10,
           },
         ]}
+        fill={[
+          {
+            match: {
+              id: "운동",
+            },
+            id: "lines",
+          },
+          {
+            match: {
+              id: "공부",
+            },
+            id: "lines",
+          },
+          {
+            match: {
+              id: "휴식",
+            },
+            id: "dots",
+          },
+
+          {
+            match: {
+              id: "식사",
+            },
+            id: "dots",
+          },
+          {
+            match: {
+              id: "수면",
+            },
+            id: "dots",
+          },
+        ]}
         legends={[
           {
             anchor: "bottom",
