@@ -1,4 +1,12 @@
-export default function ControlButton(className: string, text, onClick) {
+import React from 'react';
+
+interface ControlButtonProps {
+  className: string;
+  text: string;
+  onClick: () => void;
+}
+
+const ControlButton: React.FC<ControlButtonProps> = ({ className, text, onClick }) => {
   return (
     <div>
       <button className={className} onClick={onClick}>
@@ -6,4 +14,6 @@ export default function ControlButton(className: string, text, onClick) {
       </button>
     </div>
   );
-}
+};
+
+export default ControlButton;

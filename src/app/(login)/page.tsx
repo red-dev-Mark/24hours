@@ -8,13 +8,13 @@ export default function Home() {
   return (
     <>
       <Header />
-      {/* <Image
+      <Image
         className="absolute top-20 left-1/2 transform -translate-x-1/2"
         width={300}
         height={300}
         src="https://cdn-icons-png.flaticon.com/512/2059/2059677.png"
         alt="mainImage"
-      /> */}
+      />
 
       <div className="w-[375px] absolute left-5 top-[441px] text-center text-white">
         <p className="text-xl font-bold">안녕하세요!</p>

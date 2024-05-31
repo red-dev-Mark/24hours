@@ -1,19 +1,25 @@
+import Image from "next/image";
+
 interface Props {
   text: string;
 }
 
 export default function SocialLoginButton({ text }: Props) {
+  const getLogoSrc = () => {
+    if (text.toLowerCase().includes("google")) {
+      return "https://developers.google.com/identity/images/g-logo.png";
+    } else if (text.toLowerCase().includes("facebook")) {
+      return "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg";
+    }
+    return "";
+  };
+
   return (
-    <div className="flex-grow-0 flex-shrink-0 w-[335px] h-9 relative rounded-[3px] bg-white">
-      <div className="w-[147px] h-4">
-        {/* <img
-                src="image-2.png"
-                className="w-4 h-4 absolute left-[93.5px] top-[9.5px] object-cover"
-              /> */}
-        <p className="absolute left-[120px] top-2.5 text-xs font-bold text-center text-black">
-          {text}
-        </p>
-      </div>
+    <div className="flex items-center w-[335px] h-9 rounded-[3px] bg-white px-2">
+      <Image src={getLogoSrc()} alt={text} width={16} height={16} />
+      <p className="text-xs font-bold text-center text-black flex-grow ml-2">
+        {text}
+      </p>
     </div>
   );
 }

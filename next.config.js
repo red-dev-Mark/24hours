@@ -1,5 +1,9 @@
 module.exports = {
-    images: {
-      domains: ["lh3.googleusercontent.com"],
-    },
-  };
+  images: {
+    domains: [
+      "cdn-icons-png.flaticon.com",
+      "developers.google.com",
+      "upload.wikimedia.org",
+    ],
+  },
+};

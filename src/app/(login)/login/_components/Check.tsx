@@ -1,8 +1,7 @@
-import Link from "next/link";
-
 export default function Check() {
-    return (
-      <div className="flex-grow-0 flex-shrink-0 w-[335px] h-4">
+  return (
+    <div className="flex items-center justify-between w-[335px] mt-2">
+      <div className="flex items-center">
         <svg
           width="12"
           height="12"
@@ -30,15 +29,9 @@ export default function Check() {
             </clipPath>
           </defs>
         </svg>
-        <p className="w-[82.73px] absolute left-[16.34px] top-[142px] text-xs font-bold text-center text-white">
-          Remember me
-        </p>
-        <Link href="/home">
-          <p className="w-[102.13px] absolute left-[232.87px] top-[142px] text-xs font-bold text-center text-[#28888c]">
-            Forgot password?
-          </p>
-        </Link>
+        <p className="ml-2 text-xs font-bold text-white">Remember me</p>
       </div>
-    );
+      <p className="text-xs font-bold text-[#28888c]">Forgot password?</p>
+    </div>
+  );
 }
-
